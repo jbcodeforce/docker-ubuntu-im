@@ -29,4 +29,13 @@ in silent mode, you need a response file. A Response file is a xml document used
 the parameters used during the manual product installation. This file is needed to reproduce the
 installation within the Docker image. 
 
+# Installing DSI
+Once you download the ODM disk from Passport Advantage you get the repository configuration
+for Installation Manager in disk 4. You can change the location reference in
+the installation manager response file. Then you can fine tune a second dockerfile
+that is using the installation manager in silent mode
+to build the new image run:
+> docker build -t dsi89 -f DSIinstallDockerfile .
 
+It may take time to build the image
+Then you can use cf ic command to upload your image to your bluemix container registry.
