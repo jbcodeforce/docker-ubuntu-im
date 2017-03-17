@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<agent-input>
+  <variables>
+    <variable name='sharedLocation' value='/opt/IBM/IBMIMShared'/>
+  </variables>
+  <server>
+    <repository location='http://wodm.francelab.fr.ibm.com:19999/installers/CIS.latest/CIS.im16.8.9.0.0/CIS.linux.x86/'/>
+  </server>
+  <profile id='Decision Server Insights V8.9' installLocation='/opt/IBM/ODMInsights89'>
+    <data key='cic.selector.arch' value='x86_64'/>
+    <data key='user.prod.cis' value='false'/>
+  </profile>
+  <install>
+    <!-- Decision Server Insights 8.9.0.0 -->
+    <offering profile='Decision Server Insights V8.9' id='com.ibm.websphere.cis.ia.v89' version='8.9.0.20170121_1024' features='base,com.ibm.cis.runtime.feature,com.ibm.cis.cisdev.feature,com.ibm.cis.designer.feature,com.ibm.cis.designer.wdt.feature,com.ibm.cis.designer.sample.feature'/>
+  </install>
+  <preference name='com.ibm.cic.common.core.preferences.eclipseCache' value='${sharedLocation}'/>
+</agent-input>
